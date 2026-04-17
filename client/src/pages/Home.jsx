@@ -23,7 +23,9 @@ function Home() {
             AI Powered smart Interview Platform
           </div>
           <div className="text-center md-28">
-            <motion.h1 className="text-4xl mb:text-6xl font-semibold leading-tight max-w-4xl mx-auto"></motion.h1>
+            <motion.h1 className="text-4xl mb:text-6xl font-semibold leading-tight max-w-4xl mx-auto  ">
+              Hello
+            </motion.h1>
           </div>
         </div>
       </div>
