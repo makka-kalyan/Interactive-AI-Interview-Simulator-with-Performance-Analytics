@@ -276,7 +276,7 @@ function Home() {
                         <img
                           src={mode.image}
                           alt={mode.title}
-                          className="w-28 h-28 object-contain"
+                          className="w-28 h-28 object-contain."
                         />
                       </div>
                     </div>
