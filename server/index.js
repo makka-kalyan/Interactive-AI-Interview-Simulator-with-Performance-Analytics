@@ -1,7 +1,5 @@
 import express from "express";
 import dotenv from "dotenv";
-import User from "./models/user.model.js";
-// import { connect } from "mongoose";
 import connectDb from "./config/connectDb.js";
 import cookieParser from "cookie-parser";
 dotenv.config();
@@ -9,6 +7,7 @@ import cors from "cors";
 import authRouter from "./routes/auth.route.js";
 import userRouter from "./routes/user.route.js";
 import interviewRouter from "./routes/interview.route.js";
+import paymentRouter from "./routes/payment.route.js";
 
 const app = express();
 app.use(
@@ -24,16 +23,10 @@ app.use(cookieParser());
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/interview", interviewRouter);
-const PORT = process.env.PORT || 6000;
+app.use("/api/payment", paymentRouter);
 
+const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => {
-  console.log(`server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
   connectDb();
 });
-
-await User.updateMany(
-  { credits: { $exists: false } },
-  { $set: { credits: 100 } },
-);
-
-console.log("Credits fixed");
