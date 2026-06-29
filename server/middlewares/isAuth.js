@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+
 const isAuth = async (req, res, next) => {
   try {
     let { token } = req.cookies;
@@ -11,9 +12,8 @@ const isAuth = async (req, res, next) => {
     if (!verifyToken) {
       return res
         .status(400)
-        .json({ message: "user does not have a validtoken" });
+        .json({ message: "user does not have a valid token" });
     }
-
     req.userId = verifyToken.userId;
 
     next();

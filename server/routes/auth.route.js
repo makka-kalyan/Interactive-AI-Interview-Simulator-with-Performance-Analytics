@@ -1,6 +1,5 @@
 import express from "express";
-import { logOut } from "../controllers/auth.controller.js";
-import { googleAuth } from "../controllers/auth.controller.js";
+import { googleAuth, logOut } from "../controllers/auth.controller.js";
 
 const authRouter = express.Router();
 
