@@ -1,4 +1,4 @@
-# 🚀 Full-Stack AI Mock Interview Platform
+# 🚀 MERN-Stack AI Interview Simulator Platform
 
 An advanced, credit-based mock interview platform powered by Artificial Intelligence. This application allows users to practice interviews, receive feedback, and manage their mock interview credits.
 
@@ -38,7 +38,7 @@ An advanced, credit-based mock interview platform powered by Artificial Intellig
 ## 📂 Project Structure
 
 ```text
-Full-Stack-AI-Mock-Interview-Platform-with-Credit-Based-Access/
+Interactive-AI-Interview-Simulator-with-Performance-Analytics/
 ├── client/                 # React frontend application
 │   ├── src/                # Frontend source code
 │   ├── package.json        # Frontend dependencies
@@ -63,8 +63,8 @@ Ensure you have the following installed:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/NareshChary0430/Full-Stack-AI-Mock-Interview-Platform-with-Credit-Based-Access.git
-   cd Full-Stack-AI-Mock-Interview-Platform-with-Credit-Based-Access
+   git clone https://github.com/makka-kalyan/Interactive-AI-Interview-Simulator-with-Performance-Analytics
+   cd Interactive-AI-Interview-Simulator-with-Performance-Analytics
    ```
 
 2. **Install Server Dependencies:**
@@ -86,25 +86,19 @@ You need to create `.env` files in both the `client` and `server` directories.
 ### Server (`server/.env`)
 Create a `.env` file in the `server` directory and add the following variables:
 ```env
-PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
+PORT=8000
+MONGODB_URL=your_mongodb_url
+JWT_SECRET=your_jwt_secret
+OPENROUTER_API_KEY=your_openrouter_key
 RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
-# Add any other required backend keys (like AI API keys)
 ```
 
 ### Client (`client/.env`)
 Create a `.env` file in the `client` directory and add the following variables:
 ```env
-VITE_API_BASE_URL=http://localhost:5000/api
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-VITE_FIREBASE_APP_ID=your_firebase_app_id
-VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
+VITE_FIREBASE_APIKEY=your_firebase_api_key
+VITE_RAZORPAY_KEY_ID=rzp_test_your_key_id
 ```
 
 ## 🏃‍♂️ Running the Application
@@ -114,7 +108,7 @@ VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
    cd server
    npm run dev
    ```
-   The server will start on `http://localhost:5000`
+   The server will start on `http://localhost:8000`
 
 2. **Start the Frontend Client:**
    ```bash
