@@ -1,37 +1,46 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home.jsx";
+import Home from "./pages/Home";
 import Auth from "./pages/Auth.jsx";
-import axios from "axios";
+import InterviewPage from "./pages/InterviewPage.jsx";
+import InterviewHistory from "./pages/InterviewHistory.jsx";
+import Pricing from "./pages/Pricing.jsx";
+import InterviewReport from "./pages/InterviewReport.jsx";
 import { useEffect } from "react";
-import { setUserData } from "./redux/userSlice.js";
 import { useDispatch } from "react-redux";
+import { setUserData } from "./redux/userSlice";
+import axios from "axios";
 
 export const ServerUrl = "http://localhost:8000";
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     const getUser = async () => {
       try {
         const result = await axios.get(ServerUrl + "/api/user/current-user", {
           withCredentials: true,
         });
-        console.log("SUCCESS:", result.data);
         dispatch(setUserData(result.data));
       } catch (error) {
-        console.log("ERROR:", error.response?.data || error.message);
+        console.log(error);
         dispatch(setUserData(null));
       }
     };
     getUser();
   }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/auth" element={<Auth />} />
+      <Route path="/interview" element={<InterviewPage />} />
+      <Route path="/history" element={<InterviewHistory />} />
+      <Route path="/pricing" element={<Pricing />} />
+      <Route path="/report/:id" element={<InterviewReport />} />
     </Routes>
   );
-}
+};
 
 export default App;
