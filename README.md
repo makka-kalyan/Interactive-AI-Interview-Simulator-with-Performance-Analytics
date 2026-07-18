@@ -1,131 +1,255 @@
-# 🚀 MERN-Stack AI Interview Simulator Platform
+# 🚀 MERN Stack AI Interview Simulator Platform
 
-An advanced, credit-based mock interview platform powered by Artificial Intelligence. This application allows users to practice interviews, receive feedback, and manage their mock interview credits.
+An AI-powered mock interview platform that helps users prepare for technical interviews through realistic interview simulations, AI-generated feedback, resume-based question generation, and performance analytics.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React](https://img.shields.io/badge/React-19.2.4-61DAFB.svg?style=flat&logo=react)
-![Node.js](https://img.shields.io/badge/Node.js-Express-339933.svg?style=flat&logo=nodedotjs)
-![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248.svg?style=flat&logo=mongodb)
+## 🌐 Live Demo
+
+**🔗 Deployed Application:**
+https://interactive-ai-interview-simulator-with-9b7y.onrender.com/
+
+---
 
 ## ✨ Features
 
-- **🤖 AI-Powered Mock Interviews:** Practice with an intelligent AI interviewer that adapts to your responses.
-- **💳 Credit-Based System:** Users purchase credits to access interview sessions, managed securely via Razorpay.
-- **📄 Resume Analysis:** Upload resumes (PDF) for tailored interview questions using `pdfjs-dist`.
-- **📊 Performance Dashboards:** Track progress with visual charts (`recharts`) and detailed feedback reports (exportable via `jspdf`).
-- **🔐 Secure Authentication:** Robust user authentication and authorization using Firebase and JSON Web Tokens (JWT).
-- **💫 Modern UI/UX:** A highly responsive, beautifully animated frontend built with React, TailwindCSS, and Framer Motion.
+* 🤖 **AI-Powered Mock Interviews**
 
-## 🛠️ Tech Stack
+  * Practice interviews with an AI interviewer.
+  * Dynamic interview flow based on selected role and experience.
 
-### Frontend (Client)
-- **Framework:** React 19 + Vite
-- **State Management:** Redux Toolkit
-- **Styling:** TailwindCSS v4
-- **Animations:** Framer Motion
-- **Data Visualization:** Recharts
-- **PDF Generation:** jsPDF & jsPDF-AutoTable
-- **Authentication:** Firebase
+* 📄 **Resume-Based Interview Generation**
 
-### Backend (Server)
-- **Framework:** Node.js with Express.js
-- **Database:** MongoDB (Mongoose ODM)
-- **Authentication:** JWT (JSON Web Tokens)
-- **Payments:** Razorpay Integration
-- **File Handling:** Multer
-- **PDF Parsing:** PDF.js
+  * Upload your resume (PDF).
+  * AI generates personalized interview questions based on your resume.
 
-## 📂 Project Structure
+* 📊 **Performance Analytics**
+
+  * View interview history.
+  * Analyze scores and performance using interactive charts.
+  * Download interview reports as PDF.
+
+* 💳 **Credit-Based Interview System**
+
+  * Purchase interview credits using Razorpay.
+  * Secure payment integration.
+
+* 🔐 **Authentication & Authorization**
+
+  * Firebase Authentication
+  * JWT-based backend authorization
+
+* 📱 **Responsive Modern UI**
+
+  * Built with React, Tailwind CSS, and Framer Motion.
+  * Fully responsive across desktop and mobile devices.
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+* React 19 + Vite
+* Redux Toolkit
+* Tailwind CSS v4
+* Framer Motion
+* Recharts
+* jsPDF & jsPDF-AutoTable
+* Firebase Authentication
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* Razorpay
+* Multer
+* PDF.js
+
+---
+
+# 📂 Project Structure
 
 ```text
 Interactive-AI-Interview-Simulator-with-Performance-Analytics/
-├── client/                 # React frontend application
-│   ├── src/                # Frontend source code
-│   ├── package.json        # Frontend dependencies
-│   └── vite.config.js      # Vite configuration
-├── server/                 # Node.js Express backend
-│   ├── index.js            # Server entry point
-│   ├── package.json        # Backend dependencies
-│   └── ...                 # Routes, controllers, models, etc.
-└── README.md               # Project documentation
+│
+├── client/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── server/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── package.json
+│   └── index.js
+│
+├── README.md
+└── .gitignore
 ```
 
-## 🚀 Getting Started
+---
 
-### Prerequisites
+# 🚀 Getting Started
 
-Ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- [MongoDB](https://www.mongodb.com/) (Local or Atlas)
-- [Git](https://git-scm.com/)
+## Prerequisites
 
-### Installation
+Install the following software before running the project.
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/makka-kalyan/Interactive-AI-Interview-Simulator-with-Performance-Analytics
-   cd Interactive-AI-Interview-Simulator-with-Performance-Analytics
-   ```
+* Node.js (v16 or later)
+* MongoDB (Local or MongoDB Atlas)
+* Git
 
-2. **Install Server Dependencies:**
-   ```bash
-   cd server
-   npm install
-   ```
+---
 
-3. **Install Client Dependencies:**
-   ```bash
-   cd ../client
-   npm install
-   ```
+## Clone Repository
 
-## 🔐 Environment Variables
+```bash
+git clone https://github.com/makka-kalyan/Interactive-AI-Interview-Simulator-with-Performance-Analytics.git
 
-You need to create `.env` files in both the `client` and `server` directories.
+cd Interactive-AI-Interview-Simulator-with-Performance-Analytics
+```
 
-### Server (`server/.env`)
-Create a `.env` file in the `server` directory and add the following variables:
+---
+
+## Install Dependencies
+
+### Backend
+
+```bash
+cd server
+npm install
+```
+
+### Frontend
+
+```bash
+cd client
+npm install
+```
+
+---
+
+# 🔐 Environment Variables
+
+Create `.env` files inside both the `server` and `client` folders.
+
+## Server (.env)
+
 ```env
 PORT=8000
-MONGODB_URL=your_mongodb_url
+
+MONGODB_URL=your_mongodb_connection_string
+
 JWT_SECRET=your_jwt_secret
-OPENROUTER_API_KEY=your_openrouter_key
-RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+
+OPENROUTER_API_KEY=your_openrouter_api_key
+
+RAZORPAY_KEY_ID=your_razorpay_key
+
+RAZORPAY_KEY_SECRET=your_razorpay_secret
 ```
 
-### Client (`client/.env`)
-Create a `.env` file in the `client` directory and add the following variables:
+## Client (.env)
+
 ```env
 VITE_FIREBASE_APIKEY=your_firebase_api_key
-VITE_RAZORPAY_KEY_ID=rzp_test_your_key_id
+
+VITE_RAZORPAY_KEY_ID=your_razorpay_key
 ```
 
-## 🏃‍♂️ Running the Application
+---
 
-1. **Start the Backend Server:**
-   ```bash
-   cd server
-   npm run dev
-   ```
-   The server will start on `http://localhost:8000`
+# ▶️ Running the Project
 
-2. **Start the Frontend Client:**
-   ```bash
-   cd client
-   npm run dev
-   ```
-   The client will start on `http://localhost:5173`
+## Start Backend
 
-## 📝 Troubleshooting Git `.env` Tracking
+```bash
+cd server
+npm run dev
+```
 
-If your `.env` files are being tracked by Git despite being in `.gitignore`, it means they were committed before the `.gitignore` rule was added. To fix this, run:
+Runs on:
+
+```
+http://localhost:8000
+```
+
+---
+
+## Start Frontend
+
+```bash
+cd client
+npm run dev
+```
+
+Runs on:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🌍 Deployment
+
+The application is deployed on Render.
+
+**Live Website**
+
+https://interactive-ai-interview-simulator-with-9b7y.onrender.com/
+
+---
+
+# 📈 Future Enhancements
+
+* AI voice-based interviews
+* Video interview recording
+* Company-specific interview preparation
+* Coding interview environment
+* Leaderboards and rankings
+* Interview scheduling
+* Email report generation
+
+---
+
+# 📝 Git Ignore Note
+
+If `.env` files are accidentally tracked by Git, remove them from version control.
 
 ```bash
 git rm --cached client/.env server/.env
-git commit -m "chore: remove .env files from tracking"
+git commit -m "Remove .env files from Git tracking"
 ```
 
-## 📄 License
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a new feature branch
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
+
+---
+
+# 📄 License
 
 This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Kalyan M**
+
+GitHub: https://github.com/makka-kalyan
