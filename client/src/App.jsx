@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { setUserData } from "./redux/userSlice";
 import axios from "axios";
 
-export const ServerUrl = "http://localhost:8000";
+export const ServerUrl = "https://interactive-ai-interview-simulator-with.onrender.com";
 
 const App = () => {
   const dispatch = useDispatch();
